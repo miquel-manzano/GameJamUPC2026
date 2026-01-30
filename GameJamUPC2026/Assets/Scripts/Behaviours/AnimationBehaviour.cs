@@ -11,6 +11,7 @@ public class AnimationBehaviour : MonoBehaviour
     private static readonly int MeleeAttackHash = Animator.StringToHash("MeleeAttack");
     private static readonly int RangeAttackHash = Animator.StringToHash("RangeAttack");
     private static readonly int DashAttackHash = Animator.StringToHash("Dash");
+    private static readonly int IsAimingHash = Animator.StringToHash("IsAiming");
     
     private Animator _animator;
     private Rigidbody2D _rigidbody;
@@ -35,4 +36,5 @@ public class AnimationBehaviour : MonoBehaviour
     public void TriggerMeleeAttack() => _animator.SetTrigger(MeleeAttackHash);
     public void TriggerRangeAttack() => _animator.SetTrigger(RangeAttackHash);
     public void TriggerDash() => _animator.SetTrigger(DashAttackHash);
+    public void SetAiming(bool isAiming) => _animator.SetBool(IsAimingHash, isAiming);
 }
