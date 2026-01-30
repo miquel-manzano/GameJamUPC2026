@@ -3,13 +3,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveBehaviour : MonoBehaviour
 {
-    private Rigidbody2D _rb;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckDistance = 1.5f;
     [SerializeField] private float velocityMultiplier = 8f;
     [SerializeField] private float jumpForce = 5f;
     
-
+    private Rigidbody2D _rb;
+    private int _jumpCount;
+    
     private void Awake() => _rb = GetComponent<Rigidbody2D>();
 
     public void MoveCharacter(Vector2 direction)
@@ -22,16 +23,17 @@ public class MoveBehaviour : MonoBehaviour
 
     public void Jump()
     {
-        if (IsGrounded())
-        {
-            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0);
-            _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
+        if (!IsGrounded()) return;
+        if (_jumpCount <= 2) return;
+        _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0);
+        _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        _jumpCount += 1;
     }
     
-    public bool IsGrounded()
+    private bool IsGrounded()
     {
-        var hit = Physics2D.Raycast(transform.position, -transform.up, groundCheckDistance, groundLayer);       
+        var hit = Physics2D.Raycast(transform.position, -transform.up, groundCheckDistance, groundLayer);
+        if (hit != false) _jumpCount = 0;
         return hit.collider != null;
     }
 }

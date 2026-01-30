@@ -15,6 +15,7 @@ public class PlayerController : Character, IPlayerActions
     {
         _moveBehaviour = GetComponent<MoveBehaviour>();
         _animationBehaviour = GetComponent<AnimationBehaviour>();
+        _attackBehaviour = GetComponent<AttackBehaviour>();
         
         _inputActions = new InputSystem_Actions();
         _inputActions.Player.SetCallbacks(this);
@@ -47,16 +48,21 @@ public class PlayerController : Character, IPlayerActions
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.performed) _attackBehaviour.PerformAttack();
+    }
+    
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        if (context.performed) _attackBehaviour.SetAiming(true);
+        else if (context.canceled) _attackBehaviour.SetAiming(false);
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
         var hit = Physics2D.Raycast(transform.position, transform.right);
+        
         if (hit.collider.gameObject.TryGetComponent(out IInteractable interactable))
-        {
             interactable.Interact();
-        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
