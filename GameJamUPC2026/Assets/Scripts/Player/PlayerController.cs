@@ -72,4 +72,9 @@ public class PlayerController : MonoBehaviour, IPlayerActions
     {
         throw new NotImplementedException();
     }
+
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
 }
