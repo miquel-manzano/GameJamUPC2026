@@ -24,12 +24,12 @@ public class MoveBehaviour : MonoBehaviour
     public void Jump()
     {
         if (!IsGrounded()) return;
-        if (_jumpCount <= 2) return;
+        if (_jumpCount >= 2) return;
         _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0);
         _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         _jumpCount += 1;
     }
-    
+
     private bool IsGrounded()
     {
         var hit = Physics2D.Raycast(transform.position, -transform.up, groundCheckDistance, groundLayer);
