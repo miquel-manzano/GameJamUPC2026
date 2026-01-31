@@ -1,13 +1,11 @@
-using System;
 using static InputSystem_Actions;
-using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine;
+using System;
 
 [RequireComponent(typeof(MoveBehaviour))]
 [RequireComponent(typeof(AnimationBehaviour))]
 [RequireComponent(typeof(DashBehaviour))]
-
-
 public class PlayerController : MonoBehaviour, IPlayerActions
 {
     [SerializeField] private float interactionRange = 10f;
@@ -39,6 +37,8 @@ public class PlayerController : MonoBehaviour, IPlayerActions
     private void FixedUpdate() => _mb.MoveCharacter(_moveInput);
     private void Update()
     {
+        var facingDirection = Mathf.Sign(transform.localScale.x);
+        Debug.DrawRay(transform.position, transform.right * (facingDirection * interactionRange), Color.red);
         _ab.SetHorizontalSpeed(Mathf.Abs(_mb.GetHorizontalVelocity()));
         _ab.SetVerticalSpeed(_mb.GetVerticalVelocity());
     }
@@ -67,9 +67,11 @@ public class PlayerController : MonoBehaviour, IPlayerActions
     }
 
     public void OnInteract(InputAction.CallbackContext context)
-    {
-        var hit = Physics2D.Raycast(transform.position, transform.right);
-        if (hit.collider.gameObject.TryGetComponent(out IInteractable interactable))
+    { 
+        var facingDirection = Mathf.Sign(transform.localScale.x);
+        var hit = Physics2D.Raycast(transform.position, transform.right * facingDirection, interactionRange, interactionLayer);
+        
+        if (hit.collider != null && hit.collider.gameObject.TryGetComponent(out IInteractable interactable))
         {
             interactable.Interact();
         }

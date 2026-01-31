@@ -15,11 +15,9 @@ public class MoveBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Reset jump count when grounded and falling/standing (not moving up significantly)
+        // Reset jump count when grounded and falling/standing
         if (IsGrounded() && _rb.linearVelocity.y <= 0.1f)
-        {
             _jumpCount = 0;
-        }
     }
 
     public void MoveCharacter(Vector2 direction)
@@ -46,19 +44,17 @@ public class MoveBehaviour : MonoBehaviour
 
     public void Flip(float xDirection)
     {
-        if (xDirection > 0)
+        transform.localScale = xDirection switch
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
-        else if (xDirection < 0)
-        {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
+            > 0 => new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z),
+            < 0 => new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z),
+            _ => transform.localScale
+        };
     }
 
     private bool IsGrounded()
     {
         var hit = Physics2D.Raycast(transform.position, -transform.up, groundCheckDistance, groundLayer);
-        return hit.collider != null;
+        return hit.collider;
     }
 }
