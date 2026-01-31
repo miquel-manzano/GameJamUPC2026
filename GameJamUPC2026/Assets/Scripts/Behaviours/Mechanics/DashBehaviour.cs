@@ -8,7 +8,7 @@ public class DashBehaviour : MonoBehaviour
     [SerializeField] private float dashCooldown = 3f;
 
     private AnimationBehaviour _animationBehaviour;
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private bool isDashing = false;
     private bool canDash = true;
 
@@ -16,12 +16,13 @@ public class DashBehaviour : MonoBehaviour
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         _animationBehaviour = GetComponent<AnimationBehaviour>();
     }
 
     public void Dash(Vector2 direction)
     {
+        Debug.Log("Dash");
         if (!canDash || isDashing)
             return;
 
