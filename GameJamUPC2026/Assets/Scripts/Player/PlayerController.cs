@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour, IPlayerActions
     private InputSystem_Actions _inputActions;
     private MoveBehaviour _mb;
     private AnimationBehaviour _ab;
+    private DashBehaviour _dashBehaviour;
 
     private Vector2 _moveInput;
 
@@ -19,19 +20,21 @@ public class PlayerController : MonoBehaviour, IPlayerActions
     {
         _mb = GetComponent<MoveBehaviour>();
         _ab = GetComponent<AnimationBehaviour>();
-        
+        //Mecanicas
+        _dashBehaviour = GetComponent<DashBehaviour>();
+
         _inputActions = new InputSystem_Actions();
         _inputActions.Player.SetCallbacks(this);
     }
-    
+
     private void Start() => _inputActions.Enable();
 
     private void OnEnable() => _inputActions.Enable();
 
     private void OnDisable() => _inputActions.Disable();
-    
+
     private void FixedUpdate() => _mb.MoveCharacter(_moveInput);
-    
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -46,7 +49,7 @@ public class PlayerController : MonoBehaviour, IPlayerActions
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        
+
     }
 
     public void OnAttack(InputAction.CallbackContext context)
@@ -70,7 +73,7 @@ public class PlayerController : MonoBehaviour, IPlayerActions
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        _dashBehaviour.Dash(_moveInput);
     }
 
     public void OnAim(InputAction.CallbackContext context)

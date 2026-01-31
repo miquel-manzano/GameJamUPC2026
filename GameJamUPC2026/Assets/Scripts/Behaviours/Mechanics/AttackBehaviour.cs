@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AnimationBehaviour))]
 public class AttackBehaviour : MonoBehaviour
@@ -25,5 +26,10 @@ public class AttackBehaviour : MonoBehaviour
     public void PerformAttack()
     {
         _currentAttack?.Attack();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        Debug.Log("Attack input received");
     }
 }
