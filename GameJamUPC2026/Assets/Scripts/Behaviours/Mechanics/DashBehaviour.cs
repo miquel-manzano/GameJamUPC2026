@@ -9,16 +9,16 @@ public class DashBehaviour : MonoBehaviour
     [SerializeField] private float dashCooldown = 3f;
 
     private AnimationBehaviour _animationBehaviour;
-    private Rigidbody2D rb;
-    private bool isDashing = false;
-    private bool canDash = true;
+    private Rigidbody2D _rb;
+    private bool _isDashing = false;
+    private bool _canDash = true;
+    private Vector2 _dashDirection;
+    
     public bool unlockDash = true;
 
-    private Vector2 dashDirection;
-
-    void Awake()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
         _animationBehaviour = GetComponent<AnimationBehaviour>();
     }
 
@@ -26,17 +26,15 @@ public class DashBehaviour : MonoBehaviour
     {
         if (unlockDash)
         {
-            if (!canDash || isDashing)
-                return;
-            Debug.Log("Dash");
+            if (!_canDash || _isDashing) return;
             StartCoroutine(DashRoutine(direction));
         }
     }
 
     private IEnumerator DashRoutine(Vector2 direction)
     {
-        canDash = false;
-        isDashing = true;
+        _canDash = false;
+        _isDashing = true;
 
         /*
         float originalGravity = rb.gravityScale;
@@ -48,7 +46,7 @@ public class DashBehaviour : MonoBehaviour
 
         // Fuerza explosiva estilo Hollow Knight
         Debug.Log("Trying so hard aaaaa");
-        rb.AddForce(direction * dashForce, ForceMode2D.Force);
+        _rb.AddForce(direction * dashForce, ForceMode2D.Force);
 
         yield return new WaitForSeconds(dashDuration);
 
@@ -57,10 +55,9 @@ public class DashBehaviour : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = originalGravity;
         */
-        isDashing = false;
+        _isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
+        _canDash = true;
     }
-
 }

@@ -33,6 +33,18 @@ public class MoveBehaviour : MonoBehaviour
     public float GetHorizontalVelocity() => _rb.linearVelocity.x;
     public float GetVerticalVelocity() => _rb.linearVelocity.y;
 
+    public void Flip(float xDirection)
+    {
+        if (xDirection > 0)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else if (xDirection < 0)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+    }
+
     private bool IsGrounded()
     {
         var hit = Physics2D.Raycast(transform.position, -transform.up, groundCheckDistance, groundLayer);

@@ -2,6 +2,7 @@ using System;
 using static InputSystem_Actions;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 [RequireComponent(typeof(MoveBehaviour))]
 [RequireComponent(typeof(AnimationBehaviour))]
 [RequireComponent(typeof(DashBehaviour))]
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour, IPlayerActions
         if (context.performed)
         {
             _moveInput = new Vector2(context.ReadValue<Vector2>().x, 0f);
-            _ab.FlipSprite(_moveInput);
+            _mb.Flip(_moveInput.x);
         }
         else if (context.canceled)
         {
