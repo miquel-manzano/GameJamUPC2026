@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 [RequireComponent(typeof(MoveBehaviour))]
 [RequireComponent(typeof(AnimationBehaviour))]
+[RequireComponent(typeof(DashBehaviour))]
+
 
 public class PlayerController : MonoBehaviour, IPlayerActions
 {
