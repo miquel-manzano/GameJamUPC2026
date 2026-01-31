@@ -20,7 +20,7 @@ public class AttackBehaviour : MonoBehaviour
     public void SetAiming(bool isAiming)
     {
         _currentAttack = isAiming ? _rangeAttack : _meleeAttack;
-        _animationBehaviour.SetAiming(isAiming);
+        //_animationBehaviour.SetAiming(isAiming);
     }
 
     public void PerformAttack()

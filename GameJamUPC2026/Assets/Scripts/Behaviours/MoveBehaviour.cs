@@ -30,6 +30,9 @@ public class MoveBehaviour : MonoBehaviour
         _jumpCount += 1;
     }
 
+    public float GetHorizontalVelocity() => _rb.linearVelocity.x;
+    public float GetVerticalVelocity() => _rb.linearVelocity.y;
+
     private bool IsGrounded()
     {
         var hit = Physics2D.Raycast(transform.position, -transform.up, groundCheckDistance, groundLayer);
