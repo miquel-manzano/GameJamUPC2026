@@ -35,15 +35,11 @@ public class PlayerController : MonoBehaviour, IPlayerActions
 
     private void OnDisable() => _inputActions.Disable();
 
-    private void FixedUpdate()
-    {
-        _mb.MoveCharacter(_moveInput);
-        _ab.SetHorizontalSpeed(Mathf.Abs(_mb.GetHorizontalVelocity()));
-        _ab.SetVerticalSpeed(_mb.GetVerticalVelocity());
-    }
+    private void FixedUpdate() => _mb.MoveCharacter(_moveInput);
     private void Update()
     {
-        
+        _ab.SetHorizontalSpeed(Mathf.Abs(_mb.GetHorizontalVelocity()));
+        _ab.SetVerticalSpeed(_mb.GetVerticalVelocity());
     }
 
     public void OnMove(InputAction.CallbackContext context)
