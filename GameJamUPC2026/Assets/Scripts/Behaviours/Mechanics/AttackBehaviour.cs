@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine;
 
 [RequireComponent(typeof(AnimationBehaviour))]
 public class AttackBehaviour : MonoBehaviour
