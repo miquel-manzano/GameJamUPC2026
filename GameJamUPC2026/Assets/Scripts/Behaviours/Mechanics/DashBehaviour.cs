@@ -1,9 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class DashBehaviour : MonoBehaviour
 {
     [Header("Dash Settings")]
-    [SerializeField] private float dashForce = 20f;
+    [SerializeField] private float dashForce = 5000f;
     [SerializeField] private float dashDuration = 0.15f;
     [SerializeField] private float dashCooldown = 3f;
 
@@ -11,6 +12,7 @@ public class DashBehaviour : MonoBehaviour
     private Rigidbody2D rb;
     private bool isDashing = false;
     private bool canDash = true;
+    public bool unlockDash = true;
 
     private Vector2 dashDirection;
 
@@ -22,32 +24,43 @@ public class DashBehaviour : MonoBehaviour
 
     public void Dash(Vector2 direction)
     {
-        Debug.Log("Dash");
-        if (!canDash || isDashing)
-            return;
-
-        dashDirection = direction.normalized;
-        StartCoroutine(DashRoutine());
+        if (unlockDash)
+        {
+            if (!canDash || isDashing)
+                return;
+            Debug.Log("Dash");
+            StartCoroutine(DashRoutine(direction));
+        }
     }
 
-    private System.Collections.IEnumerator DashRoutine()
+    private IEnumerator DashRoutine(Vector2 direction)
     {
         canDash = false;
         isDashing = true;
 
-        float timer = 0f;
+        /*
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        */
 
-        while (timer < dashDuration)
-        {
-            rb.linearVelocity = dashDirection * dashForce;
-            timer += Time.deltaTime;
-            yield return null;
-        }
+        // Resetear velocidad para que AddForce funcione bien
+        //rb.linearVelocity = Vector2.zero;
 
+        // Fuerza explosiva estilo Hollow Knight
+        Debug.Log("Trying so hard aaaaa");
+        rb.AddForce(direction * dashForce, ForceMode2D.Force);
+
+        yield return new WaitForSeconds(dashDuration);
+
+        // Frenar en seco
+        /*
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = originalGravity;
+        */
         isDashing = false;
 
-        // Esperar cooldown
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
+
 }
