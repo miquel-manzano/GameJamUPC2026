@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4060542463400372513}
   - component: {fileID: 8448342313238829546}
   - component: {fileID: 7971499059000250300}
-  - component: {fileID: 5555555555555555555}
+  - component: {fileID: 6350634599137453991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.6875}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -161,7 +161,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a983b1364b3566546a47d0ee36771835, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -171,7 +171,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3499940084505497095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +239,7 @@ MonoBehaviour:
   dashForce: 20
   dashDuration: 0.15
   dashCooldown: 3
+  unlockDash: 1
 --- !u!114 &7971499059000250300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,18 +251,20 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3f01e7c8ce4ab1b7946d3ab5084833, type: 3}
   m_Name: 
-      serializedVersion: 2
-      m_Bits: 0
-  --- !u!114 &5555555555555555555
-  MonoBehaviour:
-    m_ObjectHideFlags: 0
-    m_CorrespondingSourceObject: {fileID: 0}
-    m_PrefabInstance: {fileID: 0}
-    m_PrefabAsset: {fileID: 0}
-    m_GameObject: {fileID: 7762705089370758386}
-    m_Enabled: 1
-    m_EditorHideFlags: 0
-    m_Script: {fileID: 11500000, guid: 98a11144b0eb41d8ad38cf92b78d34ef, type: 3}
-    m_Name: 
-    m_EditorClassIdentifier: Assembly-CSharp::AttackBehaviour
-  
+  m_EditorClassIdentifier: 
+  interactionRange: 10
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &6350634599137453991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762705089370758386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a11144b0eb41d8ad38cf92b78d34ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackBehaviour
