@@ -13,6 +13,15 @@ public class MoveBehaviour : MonoBehaviour
     
     private void Awake() => _rb = GetComponent<Rigidbody2D>();
 
+    private void FixedUpdate()
+    {
+        // Reset jump count when grounded and falling/standing (not moving up significantly)
+        if (IsGrounded() && _rb.linearVelocity.y <= 0.1f)
+        {
+            _jumpCount = 0;
+        }
+    }
+
     public void MoveCharacter(Vector2 direction)
     {
         var newVelocityX = direction.normalized.x * velocityMultiplier;
@@ -23,11 +32,13 @@ public class MoveBehaviour : MonoBehaviour
 
     public void Jump()
     {
-        if (!IsGrounded()) return;
-        if (_jumpCount >= 2) return;
-        _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0);
-        _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        _jumpCount += 1;
+        // Allow jump if jump count is less than 2 (0 or 1)
+        if (_jumpCount < 2)
+        {
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0);
+            _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            _jumpCount++;
+        }
     }
 
     public float GetHorizontalVelocity() => _rb.linearVelocity.x;
@@ -48,7 +59,6 @@ public class MoveBehaviour : MonoBehaviour
     private bool IsGrounded()
     {
         var hit = Physics2D.Raycast(transform.position, -transform.up, groundCheckDistance, groundLayer);
-        if (hit != false) _jumpCount = 0;
         return hit.collider != null;
     }
 }
