@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4060542463400372513}
   - component: {fileID: 8448342313238829546}
   - component: {fileID: 7971499059000250300}
+  - component: {fileID: 5555555555555555555}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -249,8 +250,18 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3f01e7c8ce4ab1b7946d3ab5084833, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  interactionRange: 10
-  interactionLayer:
-    serializedVersion: 2
-    m_Bits: 0
+      serializedVersion: 2
+      m_Bits: 0
+  --- !u!114 &5555555555555555555
+  MonoBehaviour:
+    m_ObjectHideFlags: 0
+    m_CorrespondingSourceObject: {fileID: 0}
+    m_PrefabInstance: {fileID: 0}
+    m_PrefabAsset: {fileID: 0}
+    m_GameObject: {fileID: 7762705089370758386}
+    m_Enabled: 1
+    m_EditorHideFlags: 0
+    m_Script: {fileID: 11500000, guid: 98a11144b0eb41d8ad38cf92b78d34ef, type: 3}
+    m_Name: 
+    m_EditorClassIdentifier: Assembly-CSharp::AttackBehaviour
+  

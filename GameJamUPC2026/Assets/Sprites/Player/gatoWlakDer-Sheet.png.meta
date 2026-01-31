@@ -125,19 +125,19 @@ TextureImporter:
       name: gatoWlakDer-Sheet_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 24
-        height: 27
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a2175638bc77ac310800000000000000
+      spriteID: 78f1ec574b38d44e7b79cd04f5c2c95d
       internalID: 1426083947982713130
       vertices: []
       indices: 
@@ -147,19 +147,19 @@ TextureImporter:
       name: gatoWlakDer-Sheet_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 3
-        width: 23
-        height: 27
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9093c89ca7e122d30800000000000000
+      spriteID: 20a1585937e5340548fbc4e814d05791
       internalID: 4405116898238019849
       vertices: []
       indices: 
@@ -169,19 +169,19 @@ TextureImporter:
       name: gatoWlakDer-Sheet_2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 3
-        width: 24
-        height: 27
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c96976cebe85055d0800000000000000
+      spriteID: 66524a0702d67465d8611981a8d9618b
       internalID: -3075860775187278180
       vertices: []
       indices: 
@@ -191,19 +191,19 @@ TextureImporter:
       name: gatoWlakDer-Sheet_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 3
-        width: 23
-        height: 27
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6332e16106dc372f0800000000000000
+      spriteID: f3900520418904a59aaee66ba810e00f
       internalID: -976210881637637322
       vertices: []
       indices: 

@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine;
 
 [RequireComponent(typeof(AnimationBehaviour))]
 public class AttackBehaviour : MonoBehaviour
@@ -20,16 +20,11 @@ public class AttackBehaviour : MonoBehaviour
     public void SetAiming(bool isAiming)
     {
         _currentAttack = isAiming ? _rangeAttack : _meleeAttack;
-        //_animationBehaviour.SetAiming(isAiming);
+        _animationBehaviour.SetAiming(isAiming);
     }
 
-    public void PerformAttack()
+    public void OnAttack()
     {
         _currentAttack?.Attack();
-    }
-
-    public void OnAttack(InputAction.CallbackContext context)
-    {
-        Debug.Log("Attack input received");
     }
 }
