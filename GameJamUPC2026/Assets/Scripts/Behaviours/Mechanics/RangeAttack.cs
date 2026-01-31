@@ -9,6 +9,6 @@ public class RangeAttack : IAttack
 
     public void Attack()
     {
-        _animationBehaviour.TriggerRangeAttack();
+        //_animationBehaviour.TriggerRangeAttack();
     }
 }

@@ -35,13 +35,23 @@ public class PlayerController : MonoBehaviour, IPlayerActions
 
     private void OnDisable() => _inputActions.Disable();
 
-    private void FixedUpdate() => _mb.MoveCharacter(_moveInput);
+    private void FixedUpdate()
+    {
+        _mb.MoveCharacter(_moveInput);
+        _ab.SetHorizontalSpeed(Mathf.Abs(_mb.GetHorizontalVelocity()));
+        _ab.SetVerticalSpeed(_mb.GetVerticalVelocity());
+    }
+    private void Update()
+    {
+        
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             _moveInput = new Vector2(context.ReadValue<Vector2>().x, 0f);
+            _ab.FlipSprite(_moveInput);
         }
         else if (context.canceled)
         {
