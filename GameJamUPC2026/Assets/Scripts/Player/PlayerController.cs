@@ -105,4 +105,16 @@ public class PlayerController : MonoBehaviour, IPlayerActions
             _attackBehaviour.SetAiming(false);
         }
     }
+
+    public void OnShield(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _ab.SetBool("ActivateShield", true);
+        }
+        if (context.canceled)
+        {
+            _ab.SetBool("ActivateShield", false);
+        }
+    }
 }
