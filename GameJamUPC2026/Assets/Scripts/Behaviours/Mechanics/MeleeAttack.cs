@@ -9,6 +9,6 @@ public class MeleeAttack : IAttack
 
     public void Attack()
     {
-        //_animationBehaviour.TriggerMeleeAttack();
+        _animationBehaviour.TriggerMeleeAttack();
     }
 }

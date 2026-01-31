@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: a92e72f124a056746a2de05906a6eac2
+guid: 4fc48c5b25f9f4e9d913b73bf2a5ca95
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1426083947982713130
-    second: gatoWlakDer-Sheet_0
+      213: -3803196367135801590
+    second: escudo_0
   - first:
-      213: 4405116898238019849
-    second: gatoWlakDer-Sheet_1
+      213: -5001411350557873730
+    second: escudo_1
   - first:
-      213: -3075860775187278180
-    second: gatoWlakDer-Sheet_2
+      213: -4634772184130304362
+    second: escudo_2
   - first:
-      213: -976210881637637322
-    second: gatoWlakDer-Sheet_3
+      213: -1544247635981768755
+    second: escudo_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,106 +105,93 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gatoWlakDer-Sheet_0
+      name: escudo_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 78f1ec574b38d44e7b79cd04f5c2c95d
-      internalID: 1426083947982713130
+      spriteID: a0f70d5ed05583bc0800000000000000
+      internalID: -3803196367135801590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gatoWlakDer-Sheet_1
+      name: escudo_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 0
-        width: 32
-        height: 32
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 20a1585937e5340548fbc4e814d05791
-      internalID: 4405116898238019849
+      spriteID: eb9246210ea679ab0800000000000000
+      internalID: -5001411350557873730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gatoWlakDer-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66524a0702d67465d8611981a8d9618b
-      internalID: -3075860775187278180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gatoWlakDer-Sheet_3
+      name: escudo_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 32
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f3900520418904a59aaee66ba810e00f
-      internalID: -976210881637637322
+      spriteID: 6964d0e214bfdafb0800000000000000
+      internalID: -4634772184130304362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: escudo_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7e114f4fab19ae0800000000000000
+      internalID: -1544247635981768755
       vertices: []
       indices: 
       edges: []
@@ -213,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5cfc256e15944894f92538f37039b11a
+    spriteID: 658009597f0494483966a12ed8ac20a4
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +210,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      gatoWlakDer-Sheet_0: 1426083947982713130
-      gatoWlakDer-Sheet_1: 4405116898238019849
-      gatoWlakDer-Sheet_2: -3075860775187278180
-      gatoWlakDer-Sheet_3: -976210881637637322
+      escudo_0: -3803196367135801590
+      escudo_1: -5001411350557873730
+      escudo_2: -4634772184130304362
+      escudo_3: -1544247635981768755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
