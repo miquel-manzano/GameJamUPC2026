@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // IMPORTANTE
+using UnityEngine.InputSystem;
 
 public class SoulOrbit : MonoBehaviour
 {

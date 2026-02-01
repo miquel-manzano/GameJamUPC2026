@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 
 [RequireComponent(typeof(MoveBehaviour))]
 [RequireComponent(typeof(AnimationBehaviour))]
@@ -12,7 +13,8 @@ public class PlayerController : MonoBehaviour, IPlayerActions
 {
     [SerializeField] private float interactionRange = 10f;
     [SerializeField] private LayerMask interactionLayer;
-    
+    [SerializeField] private AnimationControllerSoul _AnimationControllerSoul;
+
     //Behaviours
     private MoveBehaviour _mb;
     private AnimationBehaviour _ab;
@@ -26,7 +28,7 @@ public class PlayerController : MonoBehaviour, IPlayerActions
     {
         _mb = GetComponent<MoveBehaviour>();
         _ab = GetComponent<AnimationBehaviour>();
-        
+
         //Mecànicas
         _dashBehaviour = GetComponent<DashBehaviour>();
         _attackBehaviour = GetComponent<AttackBehaviour>();
@@ -110,11 +112,13 @@ public class PlayerController : MonoBehaviour, IPlayerActions
     {
         if (context.performed)
         {
-            _ab.SetBool("ActivateShield", true);
+            _AnimationControllerSoul.ActiveShield();
+
+
         }
         if (context.canceled)
         {
-            _ab.SetBool("ActivateShield", false);
+            _AnimationControllerSoul.DesactivateShield();
         }
     }
 }
